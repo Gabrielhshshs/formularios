@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <style>
+        .texto
+        {
+            width: 90%;
+            height: 300px;
+            font-size: 18px;
+            color: red;
+            resize: none;
+        }
+        .caixa_larga
+        {
+            width: 600px;
+            font-size: 18px;
+            box-shadow: 1px 1px black;
+        }
+        .botoes
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+        }
+        .botao:hover
+        {
+            background-color: green;
+            color: white;
+        }
+        
+        .botao
+        {
+            margin-left: 20px; /* AFASTEI OS BOTOES */
+            width: 80px;
+            height: 50px;
+            background-color: azure;
+            font-size: 18px;
+        }
+        .logo
+        {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            animation: vai_vai 10s;
+        }
+        @keyframes vai_vai {
+            0% {margin-left: 0px; }
+            100% {margin-left: 95%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    
+    <!--VAMOS CRIAR NOSSO PRIMEIRO FORMULÁRIO-->
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        Nome: <input type="text"     class="caixa_larga" id="nome">
+        <br> <br>
+        Endereço: <input type="text" class="caixa_larga" id="endereço">   
+        <br> <br>
+        Cidade: <input type="text"   class="caixa_larga" id="cidade">
+        <br> <br>
+        Estado: <select id="estado"  class="estado">
+            <option>Alagoas</option>
+            <option>Bahia</option>
+            <option selected>Santa Catarina</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados Profissionais</legend>
+        Natureza do Cargo:
+        <br>
+        <input type="radio" class="cargos" id="gerencia"       name="cargos">Gerência
+
+        <input type="radio" class="cargos" id="financeiro"     name="cargos">Financeiro
+
+        <input type="radio" class="cargos" id="recepcao"       name="cargos">Recepção
+
+        <input type="radio" class="cargos" id="administrativo" name="cargos">Administrativo
+
+        <input type="radio" class="cargos" id="juridico"       name="cargos">Jurídico
+
+        <br> <br>
+        Área de Interesse:
+        <br>
+        <input type="checkbox" class="areas" id="computaçao">Computação
+        <input type="checkbox" class="areas" id="biologia">Biologia
+        <input type="checkbox" class="areas" id="meio_ambiente">Meio Ambiente
+        <input type="checkbox" class="areas" id="engenharia">Engenharia
+        <input type="checkbox" class="areas" id="historia">História
+        <br> <br>       
+        Mini-currículo: 
+        (veja
+        <a href="https://www.vagas.com.br/profissoes/como-fazer-curriculo-dicas/" target="_blank">
+            dicas
+        </a>
+        de como fazer seu curriculo)
+        <br>
+        <textarea class="texto" id="curriculo">  </textarea>
+    
+    </fieldset>
+    <div class="botoes">
+        <button class="botao">Enviar</button>
+        <button onclick="LimparTudo();" class="botao">Limpar</button>
+    </div>
+    
+</body>
+    <script>
+        function LimparTudo()
+        {
+            nome.value ="";
+            endereço.value ="";
+            cidade.value ="";
+            estado.value ="";
+            gerencia.checked = false;
+            financeiro.checked = false;
+            recepcao.checked = false;
+            administrativo.checked = false;
+            juridico.checked = false;
+            curriculo.value ="";
+        }
+    </script>
+</html> 
